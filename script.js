@@ -72,17 +72,28 @@ function writePassword() {
       for (let i = 0; i < passwordLength; ) {
         if (lowerYes == true) {
           passwordOrdered.push(lowerCase[Math.floor(Math.random() * 26)]), i++;
+          if (i == passwordLength) {
+            break;
+          }
         }
-
         if (upperYes == true) {
           passwordOrdered.push(upperCase[Math.floor(Math.random() * 26)]), i++;
+          if (i == passwordLength) {
+            break;
+          }
         }
         if (numbersYes == true) {
           passwordOrdered.push(numbers[Math.floor(Math.random() * 10)]), i++;
+          if (i == passwordLength) {
+            break;
+          }
         }
         if (specialCharsYes == true) {
           passwordOrdered.push(specialChars[Math.floor(Math.random() * 12)]),
             i++;
+          if (i == passwordLength) {
+            break;
+          }
         }
       }
       console.log(passwordLength);
