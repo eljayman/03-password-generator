@@ -96,8 +96,8 @@ function writePassword() {
           }
         }
       }
-      console.log(passwordLength);
-      console.log(passwordOrdered.length);
+      // console.log(passwordLength);
+      // console.log(passwordOrdered.length);
       function shufflePassword(passwordOrdered) {
         passwordOrdered.sort(() => Math.random() - 0.5);
       }
