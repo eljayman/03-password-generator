@@ -12,6 +12,8 @@ Below is a screenshot of what the generator will do with 12 characters of all ty
 
 ## Usage
 
+[Go to the page] (https://eljayman.github.io/03-password-generator/)
+
 Simply click the button and follow the prompts. Click 'Cancel' if you do not want to include a category of characters when prompted.
 
 ## License
