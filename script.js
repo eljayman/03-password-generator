@@ -54,8 +54,6 @@ function writePassword() {
     "Choose number of characters from 8 to 128."
   );
 
-  var password = generatePassword();
-
   function generatePassword() {
     var passwordOrdered = [];
     if (passwordLength >= 8 && passwordLength <= 129) {
@@ -71,26 +69,28 @@ function writePassword() {
         window.alert("You must choose at least one character type!");
         return;
       }
-      for (let i = 0; i < passwordLength; i++) {
-        // if ((lowerYes = true)) {
-        passwordOrdered.push(lowerCase[Math.floor(Math.random() * 26)]);
-        // }
-        // if ((upperYes = true)) {
-        //   passwordOrdered.push(upperCase[Math.floor(Math.random() * 26)]);
-        // }
-        // if ((numbersYes = true)) {
-        //   passwordOrdered.push(numbers[Math.floor(Math.random() * 10)]);
-        // }
-        // if ((specialCharsYes = true)) {
-        //   passwordOrdered.push(specialChars[Math.floor(Math.random() * 12)]);
-        // }
+      for (let i = 0; i < passwordLength; ) {
+        if (lowerYes == true) {
+          passwordOrdered.push(lowerCase[Math.floor(Math.random() * 26)]), i++;
+        }
 
-        console.log(passwordOrdered);
+        if (upperYes == true) {
+          passwordOrdered.push(upperCase[Math.floor(Math.random() * 26)]), i++;
+        }
+        if (numbersYes == true) {
+          passwordOrdered.push(numbers[Math.floor(Math.random() * 10)]), i++;
+        }
+        if (specialCharsYes == true) {
+          passwordOrdered.push(specialChars[Math.floor(Math.random() * 12)]),
+            i++;
+        }
       }
+      console.log(passwordLength);
+      console.log(passwordOrdered.length);
       function shufflePassword(passwordOrdered) {
         passwordOrdered.sort(() => Math.random() - 0.5);
       }
-      let password = [passwordOrdered];
+      let password = passwordOrdered;
       shufflePassword(passwordOrdered);
 
       var passwordText = document.querySelector("#password");
@@ -100,6 +100,7 @@ function writePassword() {
       window.alert("Value must be from 8 to 128!");
     }
   }
+  generatePassword();
 }
 
 generateBtn.addEventListener("click", writePassword);
