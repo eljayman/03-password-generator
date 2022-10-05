@@ -67,23 +67,25 @@ function writePassword() {
       var specialCharsYes = window.confirm(
         "Do you want to use special characters?"
       );
+      if (!upperYes && !lowerYes && !numbersYes && !specialCharsYes) {
+        window.alert("You must choose at least one character type!");
+        return;
+      }
       for (let i = 0; i < passwordLength; i++) {
-        if ((lowerYes = true)) {
-          passwordOrdered.push(lowerCase[Math.floor(Math.random() * 26)]);
-        }
-        if ((upperYes = true)) {
-          passwordOrdered.push(upperCase[Math.floor(Math.random() * 26)]);
-        }
-        if ((numbersYes = true)) {
-          passwordOrdered.push(numbers[Math.floor(Math.random() * 10)]);
-        }
-        if ((specialCharsYes = true)) {
-          passwordOrdered.push(specialChars[Math.floor(Math.random() * 12)]);
-        }
+        // if ((lowerYes = true)) {
+        passwordOrdered.push(lowerCase[Math.floor(Math.random() * 26)]);
+        // }
+        // if ((upperYes = true)) {
+        //   passwordOrdered.push(upperCase[Math.floor(Math.random() * 26)]);
+        // }
+        // if ((numbersYes = true)) {
+        //   passwordOrdered.push(numbers[Math.floor(Math.random() * 10)]);
+        // }
+        // if ((specialCharsYes = true)) {
+        //   passwordOrdered.push(specialChars[Math.floor(Math.random() * 12)]);
+        // }
+
         console.log(passwordOrdered);
-        // loop through each chosen character variable type and choose a random unit
-        // until an array passwordText with passwordLength values is chosen,
-        // return error if no character types are chosen,
       }
       function shufflePassword(passwordOrdered) {
         passwordOrdered.sort(() => Math.random() - 0.5);
@@ -93,7 +95,7 @@ function writePassword() {
 
       var passwordText = document.querySelector("#password");
 
-      passwordText.value = password;
+      passwordText.value = password.join("");
     } else {
       window.alert("Value must be from 8 to 128!");
     }
