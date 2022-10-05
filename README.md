@@ -8,7 +8,7 @@ Click the button to generate a password based on the criteria you want. You have
 
 Below is a screenshot of what the generator will do with 12 characters of all types selected.
 
-(/PGenSS.png)
+![Screenshot of application](/PGenSS.png)
 
 ## Usage
 
